@@ -741,7 +741,7 @@ class Program {
 				Assert.That(result, Is.True);
 				Assert.That(File.Exists(Path.GetFullPath("Test.xml")), Is.True);
 				string doc = File.ReadAllText(Path.GetFullPath("Test.xml"));
-				Assert.That(doc, Is.StringContaining("$$$$$$$$$$$$$$$"));
+				Assert.That(doc, Does.Contain("$$$$$$$$$$$$$$$"));
 			}, "File.cs", "Test.dll", "Test.js", "Test.xml");
 		}
 

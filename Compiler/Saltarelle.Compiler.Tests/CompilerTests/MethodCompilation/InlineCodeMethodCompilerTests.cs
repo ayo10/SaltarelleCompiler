@@ -27,7 +27,7 @@ namespace Saltarelle.Compiler.Tests.CompilerTests.MethodCompilation {
 
 			string msg = null;
 			InlineCodeMethodCompiler.Tokenize(method, "Something {abcd", s => msg = s);
-			Assert.That(msg, Is.StringContaining("'}'"));
+			Assert.That(msg, Does.Contain("'}'"));
 
 			Assert.That(InlineCodeMethodCompiler.Tokenize(method, "X{}Y", s => Assert.Fail("Unexpected error " + s)), Is.EqualTo(new[] { new InlineCodeToken(InlineCodeToken.TokenType.Text, "X{}Y") }));
 		}
@@ -48,7 +48,7 @@ namespace Saltarelle.Compiler.Tests.CompilerTests.MethodCompilation {
 
 			string msg = null;
 			InlineCodeMethodCompiler.Tokenize(method, "{$Some[]-bad|type}", s => msg = s);
-			Assert.That(msg, Is.StringContaining("Some[]-bad|type"));
+			Assert.That(msg, Does.Contain("Some[]-bad|type"));
 		}
 
 		[Test]

@@ -234,16 +234,16 @@ internal class C7 { public class C8 { public class C9 {} } }
 public class C10 { private class C11 {} protected class C12 {} protected internal class C13 {} }
 ");
 
-			Assert.That(FindType("C1").Name, Is.StringMatching("^\\$[0-9]+$"));
-			Assert.That(FindType("C2").Name, Is.StringMatching("^\\$[0-9]+$"));
+			Assert.That(FindType("C1").Name, Does.Match("^\\$[0-9]+$"));
+			Assert.That(FindType("C2").Name, Does.Match("^\\$[0-9]+$"));
 			Assert.That(FindType("C3").Name, Is.EqualTo("C3"));
 			Assert.That(FindType("C4").Name, Is.EqualTo("C4"));
-			Assert.That(FindType("C4+C5").Name, Is.StringMatching("^\\$[0-9]+$"));
-			Assert.That(FindType("C4+C5+C6").Name, Is.StringMatching("^\\$[0-9]+$"));
-			Assert.That(FindType("C7").Name, Is.StringMatching("^\\$[0-9]+$"));
-			Assert.That(FindType("C7+C8").Name, Is.StringMatching("^\\$[0-9]+$"));
-			Assert.That(FindType("C7+C8+C9").Name, Is.StringMatching("^\\$[0-9]+$"));
-			Assert.That(FindType("C10+C11").Name, Is.StringMatching("^\\$[0-9]+$"));
+			Assert.That(FindType("C4+C5").Name, Does.Match("^\\$[0-9]+$"));
+			Assert.That(FindType("C4+C5+C6").Name, Does.Match("^\\$[0-9]+$"));
+			Assert.That(FindType("C7").Name, Does.Match("^\\$[0-9]+$"));
+			Assert.That(FindType("C7+C8").Name, Does.Match("^\\$[0-9]+$"));
+			Assert.That(FindType("C7+C8+C9").Name, Does.Match("^\\$[0-9]+$"));
+			Assert.That(FindType("C10+C11").Name, Does.Match("^\\$[0-9]+$"));
 			Assert.That(FindType("C10+C12").Name, Is.EqualTo("C10$C12"));
 			Assert.That(FindType("C10+C13").Name, Is.EqualTo("C10$C13"));
 		}

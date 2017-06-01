@@ -1,4 +1,4 @@
-﻿Framework "4.0x86"
+﻿Framework "4.5.1x86"
 
 properties {
 	$baseDir = Resolve-Path ".."
